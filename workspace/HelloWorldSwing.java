@@ -1,5 +1,5 @@
 import javax.swing.*;        
-
+import java.awt.*;
 public class HelloWorldSwing {
     /**
      * Create the GUI and show it.  For thread safety,
@@ -10,6 +10,7 @@ public class HelloWorldSwing {
         //Create and set up the window.
         JFrame frame = new JFrame("HelloWorldSwing");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.getContentPane().setLayout(new FlowLayout());
 
         //Add the ubiquitous "Hello World" label.
         JLabel label = new JLabel("Hello World");
