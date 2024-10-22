@@ -13,7 +13,28 @@ public class HelloWorldSwing {
         JFrame frame = new JFrame("HelloWorldSwing");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(new FlowLayout());
+        JMenuBar menuBar;
+        JMenu menu;
 
+        menuBar = new JMenuBar();
+        frame.getContentPane().add(menuBar);
+        //Build the first menu.
+        menu = new JMenu("A Menu");
+        menuBar.add(menu);
+        JButton changeScreen=new JButton("change teh screen");
+        frame.getContentPane().add(changeScreen);
+        menuBar.add(changeScreen);
+        JFrame frame2=new JFrame("NewScreen");
+        JLabel boast=new JLabel("Julius  is the best Java Coder ever");
+        frame2.getContentPane().add(boast);
+        frame2.pack();
+        changeScreen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame2.setVisible(true);
+                
+            }
+              });   
         //Add the ubiquitous "Hello World" label.
         JLabel label = new JLabel("Hello World");
         frame.getContentPane().add(label);
@@ -29,6 +50,9 @@ public class HelloWorldSwing {
 
         frame.getContentPane().add(b1);
   
+
+
+
         JButton b2 = new JButton("new phrase");
         b2.addActionListener(new ActionListener() {
             @Override
@@ -37,16 +61,29 @@ public class HelloWorldSwing {
                 
             }
               });   
+        frame.getContentPane().add(b2);
 
         JButton b3 = new JButton("new phrase");
         b3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                label.setText("heres another phrase");
+                label.setText("NYT games are fun");
                 
             }
-              });   
-        frame.getContentPane().add(b1);
+              });    
+        frame.getContentPane().add(b3);
+
+
+
+        JButton b4 = new JButton("new phrase");
+        b4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                label.setText("thats all the buttons");
+                
+            }
+              });    
+        frame.getContentPane().add(b4);
 
         //Display the window
         frame.pack();
